@@ -12,9 +12,10 @@ for ($i = 0; $i < $n; $i++)
     $t = intval($inputs[$i]); // a temperature expressed as an integer ranging from -273 to 5526
 }
 
-error_log(var_export($inputs[0], true));
+// error_log(var_export($inputs[0], true));
 
-if (count($inputs) === 1 && !is_numeric($inputs[0])) {
+$noTemperatureInformed = count($inputs) === 1 && !is_numeric($inputs[0]);
+if ($noTemperatureInformed) {
     $result = 0;
 } else {
     asort($inputs);
