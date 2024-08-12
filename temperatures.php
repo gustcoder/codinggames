@@ -17,8 +17,7 @@ for ($i = 0; $i < $n; $i++)
 
 $noTemperatureInformed = count($inputs) === 1 && !is_numeric($inputs[0]);
 if ($noTemperatureInformed) {
-    $result = 0;
-    echo("$result\n");
+    echo("0\n");
     return;
 }
 
