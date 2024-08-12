@@ -18,19 +18,21 @@ for ($i = 0; $i < $n; $i++)
 $noTemperatureInformed = count($inputs) === 1 && !is_numeric($inputs[0]);
 if ($noTemperatureInformed) {
     $result = 0;
-} else {
-    asort($inputs);
-    $positives = [];
-    $negatives = [];
-    foreach ($inputs as $input) {
-        if ($input > 0) {
-            $positives[] = $input;
-        } else {
-            $negatives[] = $input;
-        }
-    }
-    $result = $positives[0] > end($negatives) ? $positives[0] : end($negatives);
+    echo("$result\n");
+    return;
 }
+
+asort($inputs);
+$positives = [];
+$negatives = [];
+foreach ($inputs as $input) {
+    if ($input > 0) {
+        $positives[] = $input;
+    } else {
+        $negatives[] = $input;
+    }
+}
+$result = $positives[0] > end($negatives) ? $positives[0] : end($negatives);
 
 // Write an answer using echo(). DON'T FORGET THE TRAILING \n
 // To debug: error_log(var_export($var, true)); (equivalent to var_dump)
